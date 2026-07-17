@@ -1,3 +1,5 @@
+"use client";
+
 // @ts-ignore
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import { motion } from "framer-motion";
@@ -26,7 +28,7 @@ const SlideShow = ({ images }: { images: string[] }) => {
         perPage: 1,
         start: 0,
         rewind: true,
-        padding: {left:'3rem',right:'3rem'},
+        padding: { left: '3rem', right: '3rem' },
         gap: "1rem",
       }}
       hasTrack={false}
