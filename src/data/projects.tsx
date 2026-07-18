@@ -349,7 +349,7 @@ const projects: Project[] = [
     skills: { frontend: [], backend: [] },
     content:
       "A digital agency website that showcases services, client work, and a modern contact section for businesses seeking online growth.",
-    live: "https://github.com/mayankdubey23",
+    live: "https://ihodigital.com/",
     github: "https://github.com/mayankdubey23",
   },
   {
@@ -361,7 +361,7 @@ const projects: Project[] = [
     skills: { frontend: [], backend: [] },
     content:
       "A heritage web page celebrating historic architecture with immersive visuals and a polished storytelling layout.",
-    live: "https://github.com/mayankdubey23",
+    live: "https://pachewargarhfort.vercel.app/",
     github: "https://github.com/mayankdubey23",
   },
   {
@@ -385,8 +385,8 @@ const projects: Project[] = [
     skills: { frontend: [], backend: [] },
     content:
       "A botanical web design that highlights plant collections, care details, and a calm, nature-inspired browsing experience.",
-    live: "https://github.com/mayankdubey23",
-    github: "https://github.com/mayankdubey23",
+    live: "https://green-beauty-nursery.vercel.app/",
+    github: "https://github.com/mayankdubey23/green_beauty_nursery",
   },
   {
     id: "jewellery-store",
@@ -397,7 +397,7 @@ const projects: Project[] = [
     skills: { frontend: [], backend: [] },
     content:
       "A luxury jewellery storefront concept featuring elegant product displays, category sections, and premium branding.",
-    live: "https://github.com/mayankdubey23",
+    live: "https://jewelry-store-pi.vercel.app/",
     github: "https://github.com/mayankdubey23",
   },
   {
@@ -409,7 +409,7 @@ const projects: Project[] = [
     skills: { frontend: [], backend: [] },
     content:
       "A sleek music player interface with intuitive playback controls, playlists, and bold audio-focused visual styling.",
-    live: "https://github.com/mayankdubey23",
+    live: "https://mayankdubey23.github.io/Music-Player-Web-App/",
     github: "https://github.com/mayankdubey23",
   },
   {
@@ -421,7 +421,7 @@ const projects: Project[] = [
     skills: { frontend: [], backend: [] },
     content:
       "A weather dashboard web app with city search, forecast cards, and a clean UI for quick daily weather insights.",
-    live: "https://github.com/mayankdubey23",
+    live: "https://mayankdubey23.github.io/Weather-App/",
     github: "https://github.com/mayankdubey23",
   },
   {
@@ -433,7 +433,7 @@ const projects: Project[] = [
     skills: { frontend: [], backend: [] },
     content:
       "A polished authentication page design that presents sign-in and sign-up forms with a modern, user-first experience.",
-    live: "https://github.com/mayankdubey23",
+    live: "https://mayankdubey23.github.io/Login-Signup-Page/",
     github: "https://github.com/mayankdubey23",
   },
   {
@@ -445,7 +445,7 @@ const projects: Project[] = [
     skills: { frontend: [], backend: [] },
     content:
       "A fitness landing page concept that highlights workouts, trainers, and membership plans with bold visuals and strong branding.",
-    live: "https://github.com/mayankdubey23",
+    live: "https://mayankdubey23.github.io/Muscle_Headquarter/",
     github: "https://github.com/mayankdubey23",
   },
 ];
