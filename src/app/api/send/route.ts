@@ -3,9 +3,6 @@ import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resendApiKey = process.env.RESEND_API_KEY;
-const resend = resendApiKey ? new Resend(resendApiKey) : null;
-
 const Email = z.object({
   fullName: z.string().min(2, "Full name is invalid!"),
   email: z.string().email({ message: "Email is invalid!" }),
@@ -23,17 +20,23 @@ export async function POST(req: Request) {
     if (!zodSuccess)
       return Response.json({ error: zodError?.message }, { status: 400 });
 
-    if (!resend) {
+    const resendApiKey = process.env.RESEND_API_KEY;
+    if (!resendApiKey) {
       return Response.json(
         { error: "Email service is not configured." },
         { status: 500 }
       );
     }
 
+    const resend = new Resend(resendApiKey);
+    const recipientEmail = process.env.CONTACT_TO_EMAIL || config.email;
+    const senderEmail = process.env.RESEND_FROM_EMAIL || "Portfolio <onboarding@resend.dev>";
+
     const { data: resendData, error: resendError } = await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>",
-      to: [config.email],
-      subject: "Contact me from portfolio",
+      from: senderEmail,
+      to: [recipientEmail],
+      replyTo: zodData.email,
+      subject: "New message from your portfolio contact form",
       react: EmailTemplate({
         fullName: zodData.fullName,
         email: zodData.email,

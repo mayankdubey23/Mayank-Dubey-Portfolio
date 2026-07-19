@@ -345,10 +345,34 @@ const projects: Project[] = [
     category: "Web development",
     title: "IHO Digital",
     src: "/assets/projects-screenshots/ihodigital/IHO Digital.png",
-    screenshots: ["/assets/projects-screenshots/ihodigital/IHO Digital.png"],
+    screenshots: [
+      "/assets/projects-screenshots/ihodigital/IHO Digital.png",
+      "/assets/projects-screenshots/ihodigital/01.png",
+      "/assets/projects-screenshots/ihodigital/02.png",
+      "/assets/projects-screenshots/ihodigital/03.png",
+      "/assets/projects-screenshots/ihodigital/04.png",
+      "/assets/projects-screenshots/ihodigital/05.png",
+    ],
     skills: { frontend: [], backend: [] },
-    content:
-      "A digital agency website that showcases services, client work, and a modern contact section for businesses seeking online growth.",
+    content: (
+      <div>
+        <p className="font-mono">
+          "A digital agency website that showcases services, client work, and a modern contact section for businesses seeking online growth.",
+        </p>
+        <div className="mt-6">
+          <SlideShow
+            images={[
+              "/assets/projects-screenshots/ihodigital/IHO Digital.png",
+              "/assets/projects-screenshots/ihodigital/01.png",
+              "/assets/projects-screenshots/ihodigital/02.png",
+              "/assets/projects-screenshots/ihodigital/03.png",
+              "/assets/projects-screenshots/ihodigital/04.png",
+              "/assets/projects-screenshots/ihodigital/05.png",
+            ]}
+          />
+        </div>
+      </div>
+    ),
     live: "https://ihodigital.com/",
     github: "https://github.com/mayankdubey23",
   },

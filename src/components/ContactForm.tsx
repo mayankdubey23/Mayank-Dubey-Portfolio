@@ -1,5 +1,5 @@
 "use client";
-import { Check, ChevronRight, Loader2 } from "lucide-react";
+import { ChevronRight, Loader2 } from "lucide-react";
 import React from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/ace-input";
@@ -7,7 +7,6 @@ import { Textarea } from "./ui/ace-textarea";
 import { cn } from "@/lib/utils";
 import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
-import { useRouter } from "next/navigation";
 
 const ContactForm = () => {
   const [fullName, setFullName] = React.useState("");
@@ -16,7 +15,6 @@ const ContactForm = () => {
   const [loading, setLoading] = React.useState(false);
 
   const { toast } = useToast();
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,10 +32,13 @@ const ContactForm = () => {
         }),
       });
       const data = await res.json();
-      if (data.error) throw new Error(data.error);
+      if (!res.ok || data.error) {
+        throw new Error(data.error || "Something went wrong while sending your message.");
+      }
       toast({
-        title: "Thank you!",
-        description: "I'll get back to you as soon as possible.",
+        title: "🎉 Woohoo!",
+        description:
+          "Your message is now chilling in my inbox. I'll reply soon—probably before you refresh this page. 😉",
         variant: "default",
         className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
       });
@@ -45,14 +46,12 @@ const ContactForm = () => {
       setFullName("");
       setEmail("");
       setMessage("");
-      const timer = setTimeout(() => {
-        router.push("/");
-        clearTimeout(timer);
-      }, 1000);
     } catch (err) {
+      const message =
+        err instanceof Error ? err.message : "Something went wrong! Please check the fields.";
       toast({
         title: "Error",
-        description: "Something went wrong! Please check the fields.",
+        description: message,
         className: cn(
           "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
         ),
